@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="bc_ui_tool_bar_height">@dimen/bc_ui_space_48</dimen>
+  <dimen name="bc_ui_bnv_home_height">@dimen/bc_ui_space_48</dimen>
+
+  <dimen name="bc_ui_font_24">24sp</dimen>
+  <dimen name="bc_ui_font_12">12sp</dimen>
+  <dimen name="bc_ui_font_14">14sp</dimen>
+  <dimen name="bc_ui_font_16">16sp</dimen>
+  <dimen name="bc_ui_font_18">18sp</dimen>
+  <dimen name="bc_ui_font_36">36sp</dimen>
+  <dimen name="bc_ui_font_40">40sp</dimen>
+  <dimen name="bc_ui_font_54">54sp</dimen>
+  <dimen name="bc_ui_font_96">96sp</dimen>
+
+  <dimen name="bc_ui_space_0">0dp</dimen>
+  <dimen name="bc_ui_space_8">8dp</dimen>
+  <dimen name="bc_ui_space_10">10dp</dimen>
+  <dimen name="bc_ui_space_16">16dp</dimen>
+  <dimen name="bc_ui_space_48">48dp</dimen>
+  <dimen name="bc_ui_space_54">54dp</dimen>
+  <dimen name="bc_ui_space_96">96dp</dimen>
+</resources>

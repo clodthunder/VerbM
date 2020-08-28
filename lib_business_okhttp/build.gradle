@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+def versionString = '1.0'
+def versionNumber = 1
+android {
+  compileSdkVersion rootProject.android.compileSdkVersion
+  buildToolsVersion rootProject.android.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion rootProject.android.minSdkVersion
+    targetSdkVersion rootProject.android.targetSdkVersion
+    versionCode versionNumber
+    versionName versionString
+
+    //ARouter配置
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+      }
+    }
+  }
+  resourcePrefix "bi_okhttp"
+
+  lintOptions {
+    abortOnError false
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compileOnly fileTree(dir: "libs", include: ["*.jar"])
+  compileOnly rootProject.depsLibs.appcompact
+  //arouter库
+  implementation(rootProject.depsLibs.arouterapi) {
+    exclude group: 'com.android.support'
+  }
+  annotationProcessor rootProject.depsLibs.aroutercompiler
+  testImplementation rootProject.testLibs.junit
+  androidTestImplementation rootProject.testLibs.ext_junit
+
+  compileOnly project(':lib_business_log')
+  compileOnly project(':lib_basic_okhttp')
+  compileOnly project(':lib_basic_base')
+}

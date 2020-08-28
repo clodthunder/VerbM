@@ -1,0 +1,4 @@
+<resources>
+  <string name="bi_user_app_name">user model</string>
+  <string name="bi_user_string_params">"getFromApp: %1$s"</string>
+</resources>

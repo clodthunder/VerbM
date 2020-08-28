@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.alibaba.arouter'
+
+def versionString = '1.0'
+def versionNumber = 1
+
+android {
+  compileSdkVersion rootProject.android.compileSdkVersion
+  buildToolsVersion rootProject.android.buildToolsVersion
+
+  defaultConfig {
+    applicationId rootProject.android.app_applicationId
+    minSdkVersion rootProject.android.minSdkVersion
+    targetSdkVersion rootProject.android.targetSdkVersion
+    versionCode versionNumber
+    versionName versionString
+    multiDexEnabled rootProject.android.multiDexEnabled
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //ARouter配置
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [AROUTER_MODULE_NAME   : project.
+            getName(), AROUTER_GENERATE_DOC: "enable"]
+      }
+    }
+  }
+
+  //  vectorDrawables {
+  //    useSupportLibrary = true
+  //  }
+
+  resourcePrefix "app_"
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  //不同渠道的签名，可以定义多个
+  signingConfigs {
+    release {
+      if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
+        storeFile file('C:/wangyanan/workspace/workspace/xinpuda.keystore')
+      } else {
+        storeFile file('/Users/tzw/Documents/xinpuda.keystore')
+      }
+      storePassword 'bjxpd2016'
+      keyAlias 'wangyananbj'
+      keyPassword 'bjxpd2016'
+      v1SigningEnabled true
+      v2SigningEnabled true
+    }
+  }
+
+  buildTypes {
+    release {
+      signingConfig signingConfigs.release
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+
+dependencies {
+  implementation fileTree(dir: "libs", include: ["*.jar"])
+  implementation rootProject.depsLibs.appcompact
+  implementation rootProject.depsLibs.design
+  //rxjava库
+  implementation rootProject.depsLibs.rxjava
+  implementation rootProject.depsLibs.rxandroid
+  //arouter库
+  implementation(rootProject.depsLibs.arouterapi) {
+    exclude group: 'com.android.support'
+  }
+  implementation rootProject.depsLibs.constraintlayout
+  annotationProcessor rootProject.depsLibs.aroutercompiler
+
+  //butterknife
+  implementation rootProject.depsLibs.butterknife
+  annotationProcessor rootProject.depsLibs.butterknife_compiler
+
+  implementation project(':lib_basic_base')
+  implementation project(':lib_basic_ui')
+  implementation project(':lib_business_home')
+  implementation project(':lib_business_server')
+  implementation project(':lib_business_work')
+  implementation project(':lib_business_account')
+}

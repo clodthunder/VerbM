@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="bc_ui_colorPrimary">#fff</color>
+  <color name="bc_ui_colorPrimaryDark">#fff</color>
+  <color name="bc_ui_colorAccent">@color/bc_ui_color_315B6C</color>
+  <color name="bc_ui_color_tb_text">@color/bc_ui_color_2A2C30</color>
+
+  <color name="bc_ui_color_315B6C">#315B6C</color>
+  <color name="bc_ui_color_white">#fff</color>
+  <color name="bc_ui_color_black">#000</color>
+  <color name="bc_ui_color_2A2C30">#2A2C30</color>
+
+</resources>

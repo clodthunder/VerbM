@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.alibaba.arouter'
+apply plugin: 'com.jakewharton.butterknife'
+def versionString = '1.0'
+def versionNumber = 1
+android {
+  compileSdkVersion rootProject.android.compileSdkVersion
+  buildToolsVersion rootProject.android.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion rootProject.android.minSdkVersion
+    targetSdkVersion rootProject.android.targetSdkVersion
+    versionCode versionNumber
+    versionName versionString
+    //ARouter配置
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+      }
+    }
+  }
+  resourcePrefix "bi_account_"
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  implementation fileTree(dir: "libs", include: ["*.jar"])
+  implementation rootProject.depsLibs.appcompact
+  implementation rootProject.depsLibs.constraintlayout
+  implementation rootProject.depsLibs.design
+  implementation rootProject.depsLibs.navigation_fragment
+  implementation rootProject.depsLibs.navigation_ui
+  //arouter库
+  implementation(rootProject.depsLibs.arouterapi) {
+    exclude group: 'com.android.support'
+  }
+  annotationProcessor rootProject.depsLibs.aroutercompiler
+
+  //butterknife
+  implementation rootProject.depsLibs.butterknife
+  annotationProcessor rootProject.depsLibs.butterknife_compiler
+  implementation project(':lib_basic_ui')
+  implementation project(':lib_widget')
+  implementation project(':lib_basic_base')
+}

@@ -1,0 +1,15 @@
+项目组件化
+主要分为   --> 后期新的app 主要修改主题 其他的app 这只是一个壳
+1. 最上层 app
+
+2. 业务层  --> 后期主要修改业务层 就可以开发新的app
+lib_busuness_home 主页功能
+lib_business_user 用户功能
+lib_business_log 日志功能 基础日志可以使用Timber
+
+3. 基础功能层
+lib_net  网络部分
+lib_img  图片部分
+lib_widget 自定义view
+lib_utils 工具类部分
+

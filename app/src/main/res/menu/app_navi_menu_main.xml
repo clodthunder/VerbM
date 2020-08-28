@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--  业务1-->
+  <item
+      android:id="@+id/nav_menu_home"
+      android:icon="@drawable/app_navi_home_select"
+      android:title="@string/app_navi_label_home" />
+  <!-- 业务2  -->
+  <item
+      android:id="@+id/nav_menu_server"
+      android:icon="@drawable/app_navi_server_select"
+      android:title="@string/app_navi_label_server" />
+  <!-- 业务3  -->
+  <item
+      android:id="@+id/nav_menu_work"
+      android:icon="@drawable/app_navi_work_select"
+      android:title="@string/app_navi_label_work" />
+  <!--  我的-->
+  <item
+      android:id="@+id/nav_menu_account"
+      android:icon="@drawable/app_navi_account_select"
+      android:title="@string/app_navi_label_account" />
+</menu>

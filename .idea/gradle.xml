@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/lib_basic_base" />
+            <option value="$PROJECT_DIR$/lib_basic_db" />
+            <option value="$PROJECT_DIR$/lib_basic_img" />
+            <option value="$PROJECT_DIR$/lib_basic_okhttp" />
+            <option value="$PROJECT_DIR$/lib_basic_ui" />
+            <option value="$PROJECT_DIR$/lib_basic_utils" />
+            <option value="$PROJECT_DIR$/lib_business_account" />
+            <option value="$PROJECT_DIR$/lib_business_db" />
+            <option value="$PROJECT_DIR$/lib_business_home" />
+            <option value="$PROJECT_DIR$/lib_business_img" />
+            <option value="$PROJECT_DIR$/lib_business_log" />
+            <option value="$PROJECT_DIR$/lib_business_okhttp" />
+            <option value="$PROJECT_DIR$/lib_business_server" />
+            <option value="$PROJECT_DIR$/lib_business_user" />
+            <option value="$PROJECT_DIR$/lib_business_work" />
+            <option value="$PROJECT_DIR$/lib_widget" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
