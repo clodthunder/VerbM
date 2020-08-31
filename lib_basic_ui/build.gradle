@@ -38,32 +38,32 @@ android {
 }
 
 dependencies {
-  compileOnly fileTree(dir: "libs", include: ["*.jar"])
+  implementation fileTree(dir: "libs", include: ["*.jar"])
   //占位主工程android原生库
-  compileOnly rootProject.depsLibs.appcompact
-  compileOnly rootProject.depsLibs.design
-  compileOnly rootProject.depsLibs.constraintlayout
-  compileOnly rootProject.depsLibs.recyclerview
+  implementation rootProject.depsLibs.appcompact
+  implementation rootProject.depsLibs.design
+  implementation rootProject.depsLibs.constraintlayout
+  implementation rootProject.depsLibs.recyclerview
 
   //占位主工程的greenDao类库
   //  compileOnly rootProject.depsLibs.greendao
   //  //占位主工程的eventbus库
   //  compileOnly rootProject.depsLibs.eventbus
   //占位主工程的rxjava库
-  compileOnly rootProject.depsLibs.rxjava
+  implementation rootProject.depsLibs.rxjava
   //占位主工程arouter库
-  compileOnly(rootProject.depsLibs.arouterapi) {
+  implementation(rootProject.depsLibs.arouterapi) {
     exclude group: 'com.android.support'
   }
   annotationProcessor rootProject.depsLibs.aroutercompiler
 
   //butterknife
-  compileOnly rootProject.depsLibs.butterknife
+  implementation rootProject.depsLibs.butterknife
   annotationProcessor rootProject.depsLibs.butterknife_compiler
 
   //测试库
-  testCompileOnly rootProject.testLibs.junit
-  androidTestCompileOnly rootProject.testLibs.ext_junit
-  androidTestCompileOnly rootProject.testLibs.espresso
-  compileOnly project(':lib_widget')
+  testImplementation rootProject.testLibs.junit
+  androidTestImplementation rootProject.testLibs.ext_junit
+  androidTestImplementation rootProject.testLibs.espresso
+  implementation project(':lib_widget')
 }

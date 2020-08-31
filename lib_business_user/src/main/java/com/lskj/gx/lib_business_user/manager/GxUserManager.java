@@ -1,7 +1,7 @@
 package com.lskj.gx.lib_business_user.manager;
 
 import com.lskj.gx.lib_basic_base.BaseUserManager;
-import com.lskj.gx.lib_business_user.entity.GxUser;
+import com.lskj.gx.lib_business_entity.bean.UserEntity;
 
 /**
  * 创建时间:  2020/8/26
@@ -10,7 +10,7 @@ import com.lskj.gx.lib_business_user.entity.GxUser;
  * 请在这里拓展 配合lib_db 支持多用户
  * 不用使用sharePreference
  */
-public class GxUserManager extends BaseUserManager<GxUser> {
+public class GxUserManager extends BaseUserManager<UserEntity> {
   private volatile static GxUserManager instance;
 
   //获取用户管理类 单例
@@ -24,7 +24,4 @@ public class GxUserManager extends BaseUserManager<GxUser> {
     }
     return instance;
   }
-
-
-
 }

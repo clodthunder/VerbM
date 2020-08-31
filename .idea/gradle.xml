@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/lib_basic_utils" />
             <option value="$PROJECT_DIR$/lib_business_account" />
             <option value="$PROJECT_DIR$/lib_business_db" />
+            <option value="$PROJECT_DIR$/lib_business_entity" />
             <option value="$PROJECT_DIR$/lib_business_home" />
             <option value="$PROJECT_DIR$/lib_business_img" />
             <option value="$PROJECT_DIR$/lib_business_log" />

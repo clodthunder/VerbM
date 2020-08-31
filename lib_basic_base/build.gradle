@@ -10,6 +10,12 @@ android {
     targetSdkVersion rootProject.android.targetSdkVersion
     versionCode versionNumber
     versionName versionString
+
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+      }
+    }
   }
   resourcePrefix "bc_base_"
 
@@ -33,9 +39,15 @@ android {
 dependencies {
   implementation fileTree(dir: "libs", include: ["*.jar"])
   implementation rootProject.depsLibs.appcompact
-  compileOnly rootProject.depsLibs.timber
+  implementation rootProject.depsLibs.timber
+
+  implementation(rootProject.depsLibs.arouterapi) {
+    exclude group: 'com.android.support'
+  }
+  annotationProcessor rootProject.depsLibs.aroutercompiler
   //butterknife
-  compileOnly rootProject.depsLibs.butterknife
+  implementation rootProject.depsLibs.butterknife
   annotationProcessor rootProject.depsLibs.butterknife_compiler
-  compileOnly project(':lib_basic_utils')
+  implementation rootProject.depsLibs.multidex
+  implementation project(':lib_basic_utils')
 }

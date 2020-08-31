@@ -1,9 +1,9 @@
 package com.lskj.gx.verbm.splash;
 
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.lskj.gx.lib_basic_base.BaseActivity;
 import com.lskj.gx.verbm.R;
 import io.reactivex.Observable;
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  * 编写人: tzw
  * 功能描述:
  */
-@Route(path = "/manager/splash/splash_activity") public class SplashActivity extends BaseActivity {
+@Route(path = "/app/splash/splash_activity") public class SplashActivity extends BaseActivity {
   private Disposable disposable;
 
   @Override public int initView(@Nullable Bundle savedInstanceState) {
@@ -33,9 +33,12 @@ import java.util.concurrent.TimeUnit;
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(new Consumer<Integer>() {
           @Override public void accept(Integer integer) throws Exception {
-            //ARouter.getInstance().build("/bi_navi/main_activity").navigation();
-            Intent mIntent = new Intent(SplashActivity.this, MainActivity.class);
-            startActivity(mIntent);
+            //跳转
+            ARouter.getInstance().build("/bi_okhttp/okhttp_ui_activity").navigation();
+
+            //跳转home 页面
+            //Intent mIntent = new Intent(SplashActivity.this, MainActivity.class);
+            //startActivity(mIntent);
             SplashActivity.this.finish();
           }
         });

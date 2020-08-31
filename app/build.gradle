@@ -63,6 +63,12 @@ android {
   lintOptions {
     abortOnError false
   }
+
+  repositories {
+    flatDir {
+      dirs 'libs'
+    }
+  }
 }
 
 dependencies {
@@ -72,11 +78,13 @@ dependencies {
   //rxjava库
   implementation rootProject.depsLibs.rxjava
   implementation rootProject.depsLibs.rxandroid
+
   //arouter库
   implementation(rootProject.depsLibs.arouterapi) {
     exclude group: 'com.android.support'
   }
   implementation rootProject.depsLibs.constraintlayout
+  implementation rootProject.depsLibs.multidex
   annotationProcessor rootProject.depsLibs.aroutercompiler
 
   //butterknife
@@ -89,4 +97,6 @@ dependencies {
   implementation project(':lib_business_server')
   implementation project(':lib_business_work')
   implementation project(':lib_business_account')
+  implementation project(':lib_business_okhttp')
+  implementation project(':lib_basic_okhttp')
 }

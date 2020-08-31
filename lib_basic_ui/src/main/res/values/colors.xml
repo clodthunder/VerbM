@@ -4,6 +4,8 @@
   <color name="bc_ui_colorPrimaryDark">#fff</color>
   <color name="bc_ui_colorAccent">@color/bc_ui_color_315B6C</color>
   <color name="bc_ui_color_tb_text">@color/bc_ui_color_2A2C30</color>
+  <color name="bc_ui_label_bg">@color/bc_ui_color_315B6C</color>
+  <color name="bc_ui_color_red">@android:color/holo_red_dark</color>
 
   <color name="bc_ui_color_315B6C">#315B6C</color>
   <color name="bc_ui_color_white">#fff</color>
