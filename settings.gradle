@@ -1,3 +1,4 @@
+include ':lib_test_ui'
 include ':lib_business_entity'
 include ':lib_business_account'
 include ':lib_business_work'

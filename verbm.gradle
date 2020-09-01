@@ -41,7 +41,8 @@ ext {
                  easy_permission_lib   : '2.0.1',
                  retrofit              : '2.9.0',
                  cookieJar             : 'v1.0.1',
-                 multidex              : '2.0.1',]
+                 multidex              : '2.0.1',
+                 androidsvg            : '1.4',]
 
   //  greendao              : "org.greenrobot:greendao:${depsVersion.greendao}",
   //  eventbus              : "org.greenrobot:eventbus:${depsVersion.eventbus}",
@@ -78,7 +79,8 @@ ext {
               easy_permission_lib   : "pub.devrel:easypermissions:${depsVersion.easy_permission_lib}",
               retrofit              : "com.squareup.retrofit2:retrofit:${depsVersion.retrofit}",
               cookieJar             : "com.github.franmontiel:PersistentCookieJar:${depsVersion.cookieJar}",
-              multidex              : "androidx.multidex:multidex:${depsVersion.multidex}",]
+              multidex              : "androidx.multidex:multidex:${depsVersion.multidex}",
+              androidsvg            : "com.caverock:androidsvg-aar:${depsVersion.androidsvg}",]
 
   testLibs = [junit            : 'junit:junit:4.12',
               ext_junit        : 'androidx.test.ext:junit:1.1.1',

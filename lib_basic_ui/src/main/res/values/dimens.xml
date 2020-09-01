@@ -32,5 +32,6 @@
   <dimen name="bc_ui_space_48">48dp</dimen>
   <dimen name="bc_ui_space_50">50dp</dimen>
   <dimen name="bc_ui_space_54">54dp</dimen>
+  <dimen name="bc_ui_space_80">80dp</dimen>
   <dimen name="bc_ui_space_96">96dp</dimen>
 </resources>

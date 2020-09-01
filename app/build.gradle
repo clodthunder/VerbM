@@ -79,6 +79,9 @@ dependencies {
   implementation rootProject.depsLibs.rxjava
   implementation rootProject.depsLibs.rxandroid
 
+  implementation rootProject.depsLibs.glide
+  annotationProcessor rootProject.depsLibs.glidecompiler
+
   //arouter库
   implementation(rootProject.depsLibs.arouterapi) {
     exclude group: 'com.android.support'
@@ -99,4 +102,6 @@ dependencies {
   implementation project(':lib_business_account')
   implementation project(':lib_business_okhttp')
   implementation project(':lib_basic_okhttp')
+  implementation project(':lib_test_ui')
+//  implementation project(':lib_basic_img')
 }

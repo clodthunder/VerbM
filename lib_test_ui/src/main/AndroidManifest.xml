@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lskj.gx.lib_test_ui">
+
+  <application>
+    <activity
+        android:name=".Base64Test"
+        android:configChanges="keyboard|keyboardHidden|orientation"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait" />
+  </application>
+</manifest>

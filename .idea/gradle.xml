@@ -28,6 +28,7 @@
             <option value="$PROJECT_DIR$/lib_business_server" />
             <option value="$PROJECT_DIR$/lib_business_user" />
             <option value="$PROJECT_DIR$/lib_business_work" />
+            <option value="$PROJECT_DIR$/lib_test_ui" />
             <option value="$PROJECT_DIR$/lib_widget" />
           </set>
         </option>
