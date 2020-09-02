@@ -1,27 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical"
     >
-  <androidx.appcompat.widget.AppCompatTextView
-      android:layout_width="wrap_content"
+  <LinearLayout
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="base64"
-      />
-  <!--normal-->
-  <androidx.appcompat.widget.AppCompatImageView
-      android:id="@+id/aiv_base64_test"
-      android:layout_width="80dp"
-      android:layout_height="80dp"
-      android:scaleType="centerCrop"
-      />
-  <!--  svg-->
-  <androidx.appcompat.widget.AppCompatImageView
-      android:id="@+id/aiv_svg_test"
-      android:layout_width="80dp"
-      android:layout_height="80dp"
-      android:scaleType="centerCrop"
-      android:src="@color/bc_ui_color_black"
-      />
-</LinearLayout>
+      android:orientation="vertical"
+      >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="base64"
+        />
+    <!--normal-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_base64_test"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        />
+    <!--  svg-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="remote svg"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_remote_svg_test"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@color/bc_ui_color_black"
+        />
+    <!--  raw svg-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="raw svg"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_raw_svg_test"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@color/bc_ui_color_black"
+        />
+    <!--  xml svg-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" xml svg"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_xml_svg_test"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@color/bc_ui_color_black"
+        />
+    <!--  assets svg-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" assets svg"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_assets_svg_test"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@color/bc_ui_color_black"
+        />
+    <!--remote  gif-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="remote gif"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_remote_gif_test"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@color/bc_ui_color_black"
+        />
+
+    <!--lcoal  gif-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="local gif"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/aiv_local_gif_test"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@color/bc_ui_color_black"
+        />
+
+  </LinearLayout>
+</ScrollView>
