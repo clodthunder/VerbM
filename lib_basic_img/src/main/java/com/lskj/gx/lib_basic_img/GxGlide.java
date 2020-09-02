@@ -13,11 +13,15 @@ import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.lskj.gx.lib_basic_base.AppContext;
 import com.lskj.gx.lib_basic_img.svg.SvgSoftwareLayerSetter;
+import com.lskj.gx.lib_basic_img.trans.RoundForCorners;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -31,13 +35,129 @@ import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOption
  * 功能描述: 封装Glide 加载图片
  */
 public class GxGlide {
-  //todo 定制load Group
-
   /**
    * 加载常规图片
    */
   public static void load(Context context, Object model, ImageView iv) {
     load(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, iv);
+  }
+
+  /**
+   * 加载 四方形图片并任意指定 四个角的角度
+   *
+   * @param ltAngle 左上角
+   * @param lbAngle 左下教
+   * @param rtAngle 右上角
+   * @param rbAngle 右下角
+   */
+  public static void loadRoundFourFb(Context context, Object model, ImageView iv, int ltAngle, int lbAngle, int rtAngle,
+      int rbAngle) {
+    loadRoundFourFb(context, model, iv, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error,
+        R.drawable.bc_img_fallback, ltAngle, lbAngle, rtAngle, rbAngle);
+  }
+
+  public static void loadRoundFour(Context context, Object model, ImageView iv, int ltAngle, int lbAngle, int rtAngle,
+      int rbAngle) {
+    loadRoundFour(context, model, iv, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, ltAngle, lbAngle,
+        rtAngle, rbAngle);
+  }
+
+  /**
+   * 加载 四方形图片并任意指定 四个角的角度
+   *
+   * @param ltAngle 左上角
+   * @param lbAngle 左下教
+   * @param rtAngle 右上角
+   * @param rbAngle 右下角
+   */
+  public static void loadRoundFourFb(Context context, Object model, ImageView iv, @DrawableRes int placeHolder,
+      @DrawableRes int error, @DrawableRes int fallback, int ltAngle, int lbAngle, int rtAngle, int rbAngle) {
+    Glide.with(context)
+        .asDrawable()
+        .load(model)
+        .placeholder(placeHolder)
+        .error(error)
+        .fallback(fallback)
+        .apply(RequestOptions.bitmapTransform(new RoundForCorners(ltAngle, rtAngle, lbAngle, rbAngle)))
+        .into(iv);
+  }
+
+  public static void loadRoundFour(Context context, Object model, ImageView iv, @DrawableRes int placeHolder,
+      @DrawableRes int error, int ltAngle, int lbAngle, int rtAngle, int rbAngle) {
+    Glide.with(context)
+        .asDrawable()
+        .load(model)
+        .placeholder(placeHolder)
+        .error(error)
+        .apply(RequestOptions.bitmapTransform(new RoundForCorners(ltAngle, rtAngle, lbAngle, rbAngle)))
+        .into(iv);
+  }
+
+  /**
+   * 加载方形圆角图片
+   */
+  public static void loadRounded(Context context, Object model, ImageView iv) {
+    loadRounded(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, 10, iv);
+  }
+
+  public static void loadRounded(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      int angle, ImageView iv) {
+    Glide.with(context)
+        .asDrawable()
+        .load(model)
+        .placeholder(placeholder)
+        .error(error)
+        .apply(RequestOptions.bitmapTransform(new RoundedCorners(angle)))
+        .into(iv);
+  }
+
+  public static void loadRoundedFb(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      @DrawableRes int fallback, int angle, ImageView iv) {
+    Glide.with(context)
+        .asDrawable()
+        .load(model)
+        .placeholder(placeholder)
+        .error(error)
+        .apply(RequestOptions.bitmapTransform(new RoundedCorners(angle)))
+        .into(iv);
+  }
+
+  /**
+   * 常规加载圆形图片
+   */
+  public static void loadCircle(Context context, Object model, ImageView iv) {
+    loadCircle(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, iv);
+  }
+
+  /**
+   * 常规加载圆形图片
+   */
+  public static void loadCircleFb(Context context, Object model, ImageView iv) {
+    loadCircleFb(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error,
+        R.drawable.bc_img_fallback, iv);
+  }
+
+  public static void loadCircle(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      ImageView iv) {
+    Glide.with(context)
+        .asDrawable()
+        .load(model)
+        .placeholder(placeholder)
+        .error(error)
+        .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+        .into(iv);
+  }
+
+  public static void loadCircleFb(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      @DrawableRes int fallback, ImageView iv) {
+    Glide.with(context)
+        .asDrawable()
+        .load(model)
+        .placeholder(placeholder)
+        .error(error)
+        .fallback(fallback)
+        .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+        .into(iv);
   }
 
   public static void loadFb(Context context, Object model, ImageView iv) {
