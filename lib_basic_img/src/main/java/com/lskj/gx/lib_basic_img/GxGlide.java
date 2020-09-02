@@ -31,6 +31,88 @@ import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOption
  * 功能描述: 封装Glide 加载图片
  */
 public class GxGlide {
+  //todo 定制load Group
+
+  /**
+   * 加载常规图片
+   */
+  public static void load(Context context, Object model, ImageView iv) {
+    load(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, iv);
+  }
+
+  public static void loadFb(Context context, Object model, ImageView iv) {
+    load(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, R.drawable.bc_img_fallback,
+        iv);
+  }
+
+  public static void loadDrawable(Context context, Object model, ImageView iv) {
+    loadDrawable(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, iv);
+  }
+
+  public static void loadDrawableFb(Context context, Object model, ImageView iv) {
+    loadDrawable(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error,
+        R.drawable.bc_img_fallback, iv);
+  }
+
+  public static void loadBitMap(Context context, Object model, ImageView iv) {
+    loadBitMap(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, iv);
+  }
+
+  public static void loadCenterInside(Context context, Object model, ImageView iv) {
+    loadCenterInside(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, iv);
+  }
+
+  public static void loadCenterInside(Context context, Object model, @DrawableRes int fallback, ImageView iv) {
+    loadCenterInsideFb(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, fallback, iv);
+  }
+
+  /**
+   * 加载常规图片带有默认显示图片
+   */
+  public static void load(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      ImageView iv) {
+    Glide.with(context).load(model).placeholder(placeholder).error(error).into(iv);
+  }
+
+  public static void load(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      @DrawableRes int fallback, ImageView iv) {
+    Glide.with(context).load(model).placeholder(placeholder).error(error).fallback(fallback).into(iv);
+  }
+
+  public static void loadDrawable(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      ImageView iv) {
+    Glide.with(context).asDrawable().load(model).placeholder(placeholder).error(error).into(iv);
+  }
+
+  public static void loadDrawable(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      @DrawableRes int fallback, ImageView iv) {
+    Glide.with(context).asDrawable().load(model).placeholder(placeholder).error(error).fallback(fallback).into(iv);
+  }
+
+  public static void loadBitMap(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      ImageView iv) {
+    Glide.with(context).asBitmap().load(model).placeholder(placeholder).error(error).into(iv);
+  }
+
+  public static void loadCenterInside(Context context, Object model, @DrawableRes int placeholder,
+      @DrawableRes int error, ImageView iv) {
+    Glide.with(context).load(model).centerInside().placeholder(placeholder).error(error).into(iv);
+  }
+
+  public static void loadCenterInsideFb(Context context, Object model, @DrawableRes int placeholder,
+      @DrawableRes int error, @DrawableRes int fallback, ImageView iv) {
+    Glide.with(context).load(model).centerInside().placeholder(placeholder).error(error).fallback(fallback).into(iv);
+  }
+
+  public static void loadCenterCrop(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      ImageView iv) {
+    Glide.with(context).load(model).centerCrop().placeholder(placeholder).error(error).into(iv);
+  }
+
+  public static void loadCenterCrop(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      @DrawableRes int fallback, ImageView iv) {
+    Glide.with(context).load(model).centerCrop().placeholder(placeholder).error(error).fallback(fallback).into(iv);
+  }
 
   /**
    * 加载svg 图片
@@ -101,24 +183,24 @@ public class GxGlide {
    * @param error 加载失败显示
    * @param fallback 仅仅会在传入的model 是 null 时显示
    */
-  public static void loadGifFallBack(Context context, Object model, final ImageView iv, @DrawableRes int holder,
+  public static void loadGifFb(Context context, Object model, final ImageView iv, @DrawableRes int holder,
       @DrawableRes int error, @DrawableRes int fallback) {
     loadGif(context, model, iv, holder, error, fallback, 0, DiskCacheStrategy.DATA, null);
   }
 
-  public static void loadGifFallBack(Context context, Object model, ImageView iv, GifStatusListener listener) {
-    loadGifFallBack(context, null, iv, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error,
+  public static void loadGifFb(Context context, Object model, ImageView iv, GifStatusListener listener) {
+    loadGifFb(context, null, iv, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error,
         R.drawable.bc_img_fallback, listener);
   }
 
-  public static void loadGifFallBack(Context context, Object model, final ImageView iv, @DrawableRes int holder,
+  public static void loadGifFb(Context context, Object model, final ImageView iv, @DrawableRes int holder,
       @DrawableRes int error, @DrawableRes int fallback, GifStatusListener listener) {
-    loadGifFallBack(context, model, iv, holder, error, fallback, 0, DiskCacheStrategy.DATA, listener);
+    loadGifFb(context, model, iv, holder, error, fallback, 0, DiskCacheStrategy.DATA, listener);
   }
 
-  public static void loadGifFallBack(Context context, Object model, final ImageView iv, @DrawableRes int holder,
+  public static void loadGifFb(Context context, Object model, final ImageView iv, @DrawableRes int holder,
       @DrawableRes int error, @DrawableRes int fallback, int loopCount, GifStatusListener listener) {
-    loadGifFallBack(context, model, iv, holder, error, fallback, loopCount, DiskCacheStrategy.DATA, listener);
+    loadGifFb(context, model, iv, holder, error, fallback, loopCount, DiskCacheStrategy.DATA, listener);
   }
 
   /**
@@ -150,7 +232,7 @@ public class GxGlide {
    * @param looperCount 播放循环次数
    * @param listener gif 状态监听
    */
-  public static void loadGifFallBack(Context context, Object model, final ImageView iv, @DrawableRes int placeHolder,
+  public static void loadGifFb(Context context, Object model, final ImageView iv, @DrawableRes int placeHolder,
       @DrawableRes int error, @DrawableRes int fallback, int looperCount, DiskCacheStrategy diskCacheStrategy,
       GifStatusListener listener) {
     Glide.with(context)

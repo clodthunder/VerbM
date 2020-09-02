@@ -101,7 +101,7 @@ import com.lskj.gx.lib_basic_img.GxGlide;
       Toast.makeText(Base64Test.this, "error gif 执行完成了", Toast.LENGTH_SHORT).show();
     });
     //加载default网络图片
-    GxGlide.loadGifFallBack(this, "http://192.168.2.129:9090/images/test1.gif", ivDefaultGifTest, (gifDraw, iv) -> {
+    GxGlide.loadGifFb(this, "http://192.168.2.129:9090/images/test1.gif", ivDefaultGifTest, (gifDraw, iv) -> {
       Toast.makeText(Base64Test.this, "default gif 执行完成了", Toast.LENGTH_SHORT).show();
     });
     //加载网络图片
