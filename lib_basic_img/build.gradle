@@ -45,4 +45,5 @@ dependencies {
 
   testImplementation rootProject.testLibs.junit
   androidTestImplementation rootProject.testLibs.ext_junit
+  api project(':lib_basic_base')
 }
