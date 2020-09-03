@@ -60,6 +60,25 @@ public class GxRoundWithDelete extends RelativeLayout {
     return delImage;
   }
 
+  /**
+   * 设置delImage 是否隐藏
+   *
+   * @param visible true 显示 false 隐藏
+   */
+  public void setDelImgVisible(boolean visible) {
+    if (delImage != null) {
+      if (visible) {
+        if (delImage.getVisibility() != VISIBLE) {
+          delImage.setVisibility(VISIBLE);
+        }
+      } else {
+        if (delImage.getVisibility() != GONE) {
+          delImage.setVisibility(GONE);
+        }
+      }
+    }
+  }
+
   public GxRoundWithDelete(Context context) {
     super(context);
     mContext = context;
