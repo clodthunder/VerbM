@@ -2,7 +2,7 @@ package com.lskj.gx.verbm.splash.app;
 
 import androidx.multidex.MultiDexApplication;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.lskj.gx.lib_basic_base.AppContext;
+import com.lskj.gx.lib_basic_utils.AppContext;
 import com.lskj.gx.lib_basic_base.BuildConfig;
 import com.lskj.gx.lib_basic_base.manager.AppManager;
 import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;

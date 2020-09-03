@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-  implementation fileTree(dir: "libs", include: ["*.jar"])
+  api fileTree(dir: "libs", include: ["*.jar"])
   testImplementation rootProject.testLibs.junit
   androidTestImplementation rootProject.testLibs.ext_junit
 }

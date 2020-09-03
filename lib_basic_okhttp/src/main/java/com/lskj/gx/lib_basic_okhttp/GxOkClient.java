@@ -3,7 +3,7 @@ package com.lskj.gx.lib_basic_okhttp;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
-import com.lskj.gx.lib_basic_base.AppContext;
+import com.lskj.gx.lib_basic_utils.AppContext;
 import java.util.concurrent.TimeUnit;
 import okhttp3.CookieJar;
 import okhttp3.Interceptor;

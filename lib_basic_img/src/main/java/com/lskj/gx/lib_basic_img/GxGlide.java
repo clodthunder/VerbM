@@ -19,9 +19,10 @@ import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
-import com.lskj.gx.lib_basic_base.AppContext;
+import com.lskj.gx.lib_basic_utils.AppContext;
 import com.lskj.gx.lib_basic_img.svg.SvgSoftwareLayerSetter;
 import com.lskj.gx.lib_basic_img.trans.RoundForCorners;
+import com.lskj.gx.lib_basic_utils.ScreenUtil;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -78,7 +79,9 @@ public class GxGlide {
         .placeholder(placeHolder)
         .error(error)
         .fallback(fallback)
-        .apply(RequestOptions.bitmapTransform(new RoundForCorners(ltAngle, rtAngle, lbAngle, rbAngle)))
+        .apply(RequestOptions.bitmapTransform(
+            new RoundForCorners(ScreenUtil.dp2px(ltAngle), ScreenUtil.dp2px(rtAngle), ScreenUtil.dp2px(lbAngle),
+                ScreenUtil.dp2px(rbAngle))))
         .into(iv);
   }
 
@@ -89,7 +92,9 @@ public class GxGlide {
         .load(model)
         .placeholder(placeHolder)
         .error(error)
-        .apply(RequestOptions.bitmapTransform(new RoundForCorners(ltAngle, rtAngle, lbAngle, rbAngle)))
+        .apply(RequestOptions.bitmapTransform(
+            new RoundForCorners(ScreenUtil.dp2px(ltAngle), ScreenUtil.dp2px(rtAngle), ScreenUtil.dp2px(lbAngle),
+                ScreenUtil.dp2px(rbAngle))))
         .into(iv);
   }
 
@@ -111,6 +116,21 @@ public class GxGlide {
         .into(iv);
   }
 
+  public static void loadRoundedFb(Context context, Object model, int angle, ImageView iv) {
+    loadRoundedFb(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, angle, iv);
+  }
+
+  public static void loadRoundedFb(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
+      int angle, ImageView iv) {
+    Glide.with(context)
+        .asDrawable()
+        .load(model)
+        .placeholder(placeholder)
+        .error(error)
+        .apply(RequestOptions.bitmapTransform(new RoundedCorners(angle)))
+        .into(iv);
+  }
+
   public static void loadRoundedFb(Context context, Object model, @DrawableRes int placeholder, @DrawableRes int error,
       @DrawableRes int fallback, int angle, ImageView iv) {
     Glide.with(context)
@@ -118,6 +138,7 @@ public class GxGlide {
         .load(model)
         .placeholder(placeholder)
         .error(error)
+        .fallback(fallback)
         .apply(RequestOptions.bitmapTransform(new RoundedCorners(angle)))
         .into(iv);
   }
@@ -184,6 +205,31 @@ public class GxGlide {
 
   public static void loadCenterInside(Context context, Object model, @DrawableRes int fallback, ImageView iv) {
     loadCenterInsideFb(context, model, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, fallback, iv);
+  }
+
+  public static void loadFitCenterFb(Context context, Object model, @DrawableRes int fallback, ImageView iv) {
+    loadFitCenterFb(context, model, iv, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error, fallback);
+  }
+
+  public static void loadFitCenter(Context context, Object model, ImageView iv) {
+    loadFitCenter(context, model, iv, R.drawable.bc_img_place_holder, R.drawable.bc_img_loading_error);
+  }
+
+  public static void loadFitCenter(Context context, Object model, ImageView iv, @DrawableRes int placeholder,
+      @DrawableRes int error) {
+    Glide.with(context).asDrawable().load(model).placeholder(placeholder).error(error).fitCenter().into(iv);
+  }
+
+  public static void loadFitCenterFb(Context context, Object model, ImageView iv, @DrawableRes int placeholder,
+      @DrawableRes int error, @DrawableRes int fallback) {
+    Glide.with(context)
+        .asDrawable()
+        .load(model)
+        .placeholder(placeholder)
+        .error(error)
+        .fallback(fallback)
+        .fitCenter()
+        .into(iv);
   }
 
   /**

@@ -11,7 +11,6 @@ android {
     versionCode versionNumber
     versionName versionString
   }
-  resourcePrefix "widget_"
 
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
@@ -32,7 +31,9 @@ android {
 
 dependencies {
   dependencies {
-    compileOnly fileTree(dir: "libs", include: ["*.jar"])
-    compileOnly rootProject.depsLibs.appcompact
+    api fileTree(dir: "libs", include: ["*.jar"])
+    api rootProject.depsLibs.appcompact
+    api project(':lib_basic_utils')
+    api project(':lib_basic_img')
   }
 }

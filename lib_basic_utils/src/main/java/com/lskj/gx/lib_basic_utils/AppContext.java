@@ -1,4 +1,4 @@
-package com.lskj.gx.lib_basic_base;
+package com.lskj.gx.lib_basic_utils;
 
 import android.content.Context;
 

@@ -42,9 +42,9 @@ dependencies {
   api fileTree(dir: "libs", include: ["*.jar"])
   api rootProject.depsLibs.appcompact
   api rootProject.depsLibs.constraintlayout
+  api rootProject.depsLibs.circleimageview
 
   api rootProject.depsLibs.butterknife
-  implementation project(path: ':lib_basic_img')
   annotationProcessor rootProject.depsLibs.butterknife_compiler
 
   //arouter库
@@ -54,4 +54,8 @@ dependencies {
   annotationProcessor rootProject.depsLibs.aroutercompiler
   api project(':lib_basic_ui')
   api project(':lib_basic_img')
+  api project(':lib_basic_utils')
+  api project(':lib_widget')
+  api project(':roundimageview')
+  api project(':lib_business_entity')
 }

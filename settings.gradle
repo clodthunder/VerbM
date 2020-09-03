@@ -1,3 +1,4 @@
+include ':roundimageview'
 include ':lib_test_ui'
 include ':lib_business_entity'
 include ':lib_business_account'

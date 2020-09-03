@@ -67,4 +67,5 @@ dependencies {
   api project(':lib_basic_okhttp')
   api project(':lib_basic_base')
   api project(':lib_business_entity')
+  api project(':lib_basic_utils')
 }

@@ -40,6 +40,7 @@ dependencies {
   api rootProject.depsLibs.appcompact
   api rootProject.depsLibs.timber
   api rootProject.depsLibs.glide
+  implementation project(path: ':lib_basic_utils')
   annotationProcessor rootProject.depsLibs.glidecompiler
   api rootProject.depsLibs.androidsvg
 

@@ -36,7 +36,8 @@ import java.util.concurrent.TimeUnit;
             //跳转 测试 网络框架
             //ARouter.getInstance().build("/bi_okhttp/okhttp_ui_activity").navigation();
             //跳转 测试 图片加载框架 glide
-            ARouter.getInstance().build("/test_ui/base64_test").navigation();
+            //ARouter.getInstance().build("/test_ui/base64_test").navigation();
+            ARouter.getInstance().build("/test_ui/image_delete").navigation();
 
             //跳转home 页面
             //Intent mIntent = new Intent(SplashActivity.this, MainActivity.class);

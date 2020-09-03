@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.lskj.gx.lib_basic_img.GxGlide;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * 创建时间:  2020/9/1
@@ -34,6 +35,12 @@ import com.lskj.gx.lib_basic_img.GxGlide;
   @BindView(R2.id.aiv_error_gif_test) AppCompatImageView ivErrorGifTest;
   @BindView(R2.id.iv_big_error) AppCompatImageView ivBigErrorTest;
   @BindView(R2.id.aiv_default_gif_test) AppCompatImageView ivDefaultGifTest;
+  @BindView(R2.id.iv_circle) CircleImageView ivCircle;
+  @BindView(R2.id.iv_error_circle) CircleImageView ivErrorCircle;
+  @BindView(R2.id.iv_round) AppCompatImageView ivRound;
+  @BindView(R2.id.iv_error_round) AppCompatImageView ivErrorRound;
+  @BindView(R2.id.iv_round_four) AppCompatImageView ivRoundFour;
+  @BindView(R2.id.iv_error_round_four) AppCompatImageView ivErrorRoundFour;
   private static final String DATA_URI =
       "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZ\n"
           + "yBJSkcgSlBFRyB2ODApLCBxdWFsaXR5ID0gNzUK/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4\n"
@@ -69,7 +76,7 @@ import com.lskj.gx.lib_basic_img.GxGlide;
   //加载svg 图片
   @SuppressLint("CheckResult") @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.img_base64_test);
+    setContentView(R.layout.test_ui_img_base64_test);
     unbinder = ButterKnife.bind(this);
     Glide.with(this)
         .load(DATA_URI.toString())
@@ -116,6 +123,16 @@ import com.lskj.gx.lib_basic_img.GxGlide;
     GxGlide.loadGif(this, "http://192.168.2.129:9090/images/test1.gif", ivBigErrorTest, 0, (gifDraw, iv) -> {
       Toast.makeText(Base64Test.this, "big error gif 执行完成了", Toast.LENGTH_SHORT).show();
     });
+
+    String urlCir = "http://192.168.2.129:9090/images/dGVtcA.jpg";
+    GxGlide.load(this, urlCir, ivCircle);
+    GxGlide.loadFb(this, null, ivErrorCircle);
+
+    GxGlide.loadRounded(this, urlCir, ivRound);
+    GxGlide.loadRoundedFb(this, null, 10, ivErrorRound);
+
+    GxGlide.loadRoundFour(this, urlCir, ivRoundFour, 10, 10, 5, 10);
+    GxGlide.loadRoundFourFb(this, null, ivErrorRoundFour, 10, 10, 5, 10);
   }
 
   @Override protected void onDestroy() {
