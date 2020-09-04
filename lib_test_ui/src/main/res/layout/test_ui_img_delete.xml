@@ -6,15 +6,46 @@
     android:background="@android:color/white"
     android:orientation="vertical"
     >
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="GxRoundWithDel"
+      />
   <com.lskj.gx.lib_widget.textview.GxRoundWithDelete
       android:id="@+id/grwd_test"
       android:layout_width="80dp"
       android:layout_height="80dp"
       android:layout_marginTop="20dp"
       />
+
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="aaa"
+      android:text="HoriImages 用于图片列表"
       />
+
+  <com.lskj.gx.lib_widget.textview.HoriImages
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@android:color/darker_gray"
+      android:scrollbars="none"
+      />
+
+  <HorizontalScrollView
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:background="@android:color/holo_blue_bright"
+      >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        >
+      <ImageView
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:contentDescription="TODO"
+          />
+    </LinearLayout>
+  </HorizontalScrollView>
 </LinearLayout>

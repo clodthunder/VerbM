@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      tools:context="com.hikvision.open.app.PlaybackActivity"
+      >
+
+    <com.lskj.gx.lib_hk_video.widget.PlayWindowContainer
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/black"
+        >
+
+      <TextureView
+          android:id="@+id/texture_view"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          />
+
+      <ProgressBar
+          android:id="@+id/progress_bar"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:visibility="gone"
+          />
+
+      <TextView
+          android:id="@+id/result_hint_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:textColor="@android:color/white"
+          android:visibility="gone"
+          />
+
+      <TextView
+          android:id="@+id/digital_scale_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="end|top"
+          android:layout_marginTop="@dimen/hk_fab_margin"
+          android:layout_marginEnd="@dimen/hk_fab_margin"
+          android:layout_marginRight="@dimen/hk_fab_margin"
+          android:textColor="@android:color/white"
+          android:textSize="16sp"
+          android:visibility="gone"
+          tools:text="1.0X"
+          tools:visibility="visible"
+          />
+
+      <com.lskj.gx.lib_hk_video.widget.AutoHideView
+          android:id="@+id/auto_hide_view"
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:layout_gravity="bottom"
+          android:visibility="gone"
+          />
+    </com.lskj.gx.lib_hk_video.widget.PlayWindowContainer>
+
+    <com.lskj.gx.lib_hk_video.TimeBarView
+        android:id="@+id/time_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/frame_layout"
+        android:background="#333333"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/playback_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_bar"
+        android:layout_marginTop="10dp"
+        >
+
+      <EditText
+          android:id="@+id/playback_uri_edit"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/hk_please_input_playback_uri"
+          android:inputType="textUri"
+          />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playback_input_layout"
+        android:text="@string/hk_start_playback"
+        />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playback_input_layout"
+        android:layout_toRightOf="@id/start"
+        android:text="@string/hk_stop_playback"
+        />
+
+
+    <Button
+        android:id="@+id/capture_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start"
+        android:text="@string/hk_capture"
+        />
+
+    <Button
+        android:id="@+id/record_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start"
+        android:layout_toRightOf="@id/capture_button"
+        android:text="@string/hk_start_record"
+        />
+
+    <Button
+        android:id="@+id/sound_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start"
+        android:layout_toRightOf="@id/record_button"
+        android:text="@string/hk_sound_open"
+        />
+
+    <Button
+        android:id="@+id/pause_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start"
+        android:layout_toRightOf="@id/sound_button"
+        android:text="@string/hk_pause"
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/decode_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/capture_button"
+        android:layout_marginStart="@dimen/hk_fab_margin"
+        android:layout_marginLeft="@dimen/hk_fab_margin"
+        android:layout_marginTop="8dp"
+        android:checked="false"
+        android:text="@string/hk_decode_device"
+        />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/smart_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/capture_button"
+        android:layout_marginStart="@dimen/hk_fab_margin"
+        android:layout_marginLeft="@dimen/hk_fab_margin"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/decode_switch"
+        android:layout_toRightOf="@id/decode_switch"
+        android:checked="true"
+        android:text="@string/hk_smart_detect"
+        />
+
+    <TextView
+        android:id="@+id/record_file_path_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/decode_switch"
+        tools:text="/storage/emulated/0/Android/data/com.hikvision.open.app/files/Pictures/_20180917151634445.jpg"
+        />
+  </RelativeLayout>
+
+</ScrollView>
+

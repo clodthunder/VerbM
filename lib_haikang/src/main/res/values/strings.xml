@@ -1,0 +1,28 @@
+<resources>
+  <string name="hk_app_name">lib_hk_video</string>
+  <string name="hk_please_input_preview_uri">请输入您需要播放的实时预览URL</string>
+  <string name="hk_please_input_playback_uri">请输入您需要播放的录像回放URL</string>
+  <string name="hk_please_input_voicetalk_uri">请输入您需要对讲的URL</string>
+  <string name="hk_real_preview">实时预览</string>
+  <string name="hk_playback">录像回放</string>
+  <string name="hk_voice_talk">语音对讲</string>
+  <string name="hk_title_activity_preview">实时预览</string>
+  <string name="hk_title_activity_playback">录像回放</string>
+  <string name="hk_capture">抓图</string>
+  <string name="hk_start_record">开始录像</string>
+  <string name="hk_close_record">关闭录像</string>
+  <string name="hk_sound_open">声音开</string>
+  <string name="hk_sound_close">声音关</string>
+  <string name="hk_pause">暂停</string>
+  <string name="hk_resume">恢复</string>
+  <string name="hk_stop_preview">停止预览</string>
+  <string name="hk_start_preview">开始预览</string>
+  <string name="hk_stop_playback">停止回放</string>
+  <string name="hk_start_playback">开始回放</string>
+
+  <string name="hk_stop_talk">关闭对讲</string>
+  <string name="hk_start_talk">开启对讲</string>
+
+  <string name="hk_decode_device">硬解码</string>
+  <string name="hk_smart_detect">智能信息</string>
+</resources>

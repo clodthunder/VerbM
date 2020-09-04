@@ -4,6 +4,10 @@ apply plugin: 'com.alibaba.arouter'
 def versionString = '1.0'
 def versionNumber = 1
 
+static def buildTime() {
+  return new Date().format("yyyy_MM_dd_HH:mm")
+}
+
 android {
   compileSdkVersion rootProject.android.compileSdkVersion
   buildToolsVersion rootProject.android.buildToolsVersion
@@ -62,6 +66,12 @@ android {
   }
   lintOptions {
     abortOnError false
+  }
+
+  android.applicationVariants.all { variant ->
+    variant.outputs.all {
+      outputFileName = "Verbm_${versionString}_${buildTime()}.apk"
+    }
   }
 
   repositories {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/tv_lable_hksp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="海康视频"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHorizontal_bias="0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0"
+      />
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_preview_on_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="实时预览"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHorizontal_bias="0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tv_lable_hksp"
+      app:layout_constraintVertical_bias="0"
+      />
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_play_back"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="录像回放"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHorizontal_bias="0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/btn_preview_on_time"
+      app:layout_constraintVertical_bias="0"
+      />
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_audio_talk"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="语音对讲"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHorizontal_bias="0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/btn_play_back"
+      app:layout_constraintVertical_bias="0"
+      />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

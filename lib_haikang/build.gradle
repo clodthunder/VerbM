@@ -1,0 +1,91 @@
+//apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
+apply plugin: 'com.alibaba.arouter'
+apply plugin: 'com.jakewharton.butterknife'
+def versionString = '1.0'
+def versionNumber = 1
+
+static def buildTime() {
+  return new Date().format("yyyy_MM_dd_HH:mm")
+}
+
+android {
+  compileSdkVersion rootProject.android.compileSdkVersion
+  buildToolsVersion rootProject.android.buildToolsVersion
+
+  defaultConfig {
+    applicationId "com.lskj.gx.lib_hk_video"
+    minSdkVersion rootProject.android.minSdkVersion
+    targetSdkVersion rootProject.android.targetSdkVersion
+    versionCode versionNumber
+    versionName versionString
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    consumerProguardFiles "consumer-rules.pro"
+
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+      }
+    }
+
+    //增加64位库的支持
+    ndk {
+      abiFilters 'armeabi-v7a', 'arm64-v8a'
+    }
+  }
+
+  resourcePrefix "hk_"
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  lintOptions {
+    abortOnError false
+    checkReleaseBuilds false
+    ignoreWarnings true
+  }
+
+  android.applicationVariants.all { variant ->
+    variant.outputs.all {
+      outputFileName = "lib_Hk_${versionString}_${buildTime()}.apk"
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  api fileTree(dir: "libs", include: ["*.jar"])
+  api rootProject.depsLibs.appcompact
+  api rootProject.depsLibs.constraintlayout
+  api rootProject.depsLibs.design
+  api rootProject.depsLibs.navigation_fragment
+  api rootProject.depsLibs.navigation_ui
+  api rootProject.depsLibs.utilcode
+
+  //arouter库
+  api(rootProject.depsLibs.arouterapi) {
+    exclude group: 'com.android.support'
+  }
+  annotationProcessor rootProject.depsLibs.aroutercompiler
+
+  //butterknife
+  api rootProject.depsLibs.butterknife
+  annotationProcessor rootProject.depsLibs.butterknife_compiler
+
+  testImplementation rootProject.testLibs.junit
+  androidTestImplementation rootProject.testLibs.ext_junit
+  androidTestImplementation rootProject.testLibs.espresso
+
+  api project(':lib_basic_ui')
+  api project(':lib_widget')
+  api project(':lib_basic_base')
+}

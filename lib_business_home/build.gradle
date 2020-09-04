@@ -39,22 +39,22 @@ android {
 }
 
 dependencies {
-  implementation fileTree(dir: "libs", include: ["*.jar"])
-  implementation rootProject.depsLibs.appcompact
-  implementation rootProject.depsLibs.constraintlayout
-  implementation rootProject.depsLibs.design
-  implementation rootProject.depsLibs.navigation_fragment
-  implementation rootProject.depsLibs.navigation_ui
+  api fileTree(dir: "libs", include: ["*.jar"])
+  api rootProject.depsLibs.appcompact
+  api rootProject.depsLibs.constraintlayout
+  api rootProject.depsLibs.design
+  api rootProject.depsLibs.navigation_fragment
+  api rootProject.depsLibs.navigation_ui
   //arouter库
-  implementation(rootProject.depsLibs.arouterapi) {
+  api(rootProject.depsLibs.arouterapi) {
     exclude group: 'com.android.support'
   }
   annotationProcessor rootProject.depsLibs.aroutercompiler
 
   //butterknife
-  implementation rootProject.depsLibs.butterknife
+  api rootProject.depsLibs.butterknife
   annotationProcessor rootProject.depsLibs.butterknife_compiler
-  implementation project(':lib_basic_ui')
-  implementation project(':lib_widget')
-  implementation project(':lib_basic_base')
+  api project(':lib_basic_ui')
+  api project(':lib_widget')
+  api project(':lib_basic_base')
 }

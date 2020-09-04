@@ -43,7 +43,8 @@ ext {
                  cookieJar             : 'v1.0.1',
                  multidex              : '2.0.1',
                  androidsvg            : '1.4',
-                 circle_image_view     : '3.1.0',]
+                 circle_image_view     : '3.1.0',
+                 utilcode              : '1.20.3',]
 
   //  greendao              : "org.greenrobot:greendao:${depsVersion.greendao}",
   //  eventbus              : "org.greenrobot:eventbus:${depsVersion.eventbus}",
@@ -82,7 +83,8 @@ ext {
               cookieJar             : "com.github.franmontiel:PersistentCookieJar:${depsVersion.cookieJar}",
               multidex              : "androidx.multidex:multidex:${depsVersion.multidex}",
               androidsvg            : "com.caverock:androidsvg-aar:${depsVersion.androidsvg}",
-              circleimageview       : "de.hdodenhof:circleimageview:${depsVersion.circle_image_view}",]
+              circleimageview       : "de.hdodenhof:circleimageview:${depsVersion.circle_image_view}",
+              utilcode              : "com.blankj:utilcode:${depsVersion.utilcode}",]
 
   testLibs = [junit            : 'junit:junit:4.12',
               ext_junit        : 'androidx.test.ext:junit:1.1.1',
