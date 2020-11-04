@@ -16,7 +16,7 @@ import butterknife.Unbinder;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.lskj.gx.lib_basic_base.BaseRes;
 import com.lskj.gx.lib_business_entity.dto.UserDto;
-import com.lskj.gx.lib_business_entity.vo.UserVo;
+import com.lskj.gx.lib_business_entity.vo.LoginVo;
 import com.lskj.gx.lib_business_okhttp.services.UserService;
 import java.util.HashMap;
 import retrofit2.Call;
@@ -76,13 +76,13 @@ import retrofit2.Response;
   private void login() {
     UserService service = GxNetManager.getRet().create(UserService.class);
     UserDto user = new UserDto("zzz", "123456");
-    Call<BaseRes<UserVo>> call = service.login(user);
-    call.enqueue(new Callback<BaseRes<UserVo>>() {
-      @Override public void onResponse(Call<BaseRes<UserVo>> call, Response<BaseRes<UserVo>> response) {
+    Call<BaseRes<LoginVo>> call = service.login(user);
+    call.enqueue(new Callback<BaseRes<LoginVo>>() {
+      @Override public void onResponse(Call<BaseRes<LoginVo>> call, Response<BaseRes<LoginVo>> response) {
         tvLoginResponse.setText(response.code() + "----" + response.body().getData().toString());
       }
 
-      @Override public void onFailure(Call<BaseRes<UserVo>> call, Throwable t) {
+      @Override public void onFailure(Call<BaseRes<LoginVo>> call, Throwable t) {
         tvLoginResponse.setText("onFailure ----" + t.getMessage());
       }
     });

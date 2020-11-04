@@ -24,7 +24,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * 编写人: tzw
  * 功能描述:
  */
-@Route(path = "/test_ui/base64_test") public class Base64Test extends AppCompatActivity {
+@Route(path = "/test_ui/base64_test") public class Base64TestActivity extends AppCompatActivity {
   private Unbinder unbinder;
   @BindView(R2.id.aiv_base64_test) AppCompatImageView ivBase64Test;
   @BindView(R2.id.aiv_remote_svg_test) AppCompatImageView ivRemoteSvgTest;
@@ -86,11 +86,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
     GxGlide.loadSvg(this, "http://192.168.2.129:9090/images/test.svg", ivRemoteSvgTest);
 
     //GxGlide.loadSvg(this,
-    //    Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/" + R.raw.android_toy_h),
+    //    Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/" + R.raw.test_ui_android_toy_h),
     //    ivRawSvgTest);
-    //GxGlide.loadRawSvg(this, R.raw.android_toy_h, ivRawSvgTest);
+    //GxGlide.loadRawSvg(this, R.raw.test_ui_android_toy_h, ivRawSvgTest);
 
-    GxGlide.loadRawSvg(this, R.raw.android_toy_h, ivRawSvgTest);
+    GxGlide.loadRawSvg(this, R.raw.test_ui_android_toy_h, ivRawSvgTest);
 
     //加载xml 类型的svg 图片 这里需要注意的是vector 和svg 的关系
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -105,23 +105,23 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
     //加载error网络图片
     GxGlide.loadGif(this, "http://192.168.2.129:9090/images/test1.gif", ivErrorGifTest, 0, (gifDraw, iv) -> {
-      Toast.makeText(Base64Test.this, "error gif 执行完成了", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Base64TestActivity.this, "error gif 执行完成了", Toast.LENGTH_SHORT).show();
     });
     //加载default网络图片
     GxGlide.loadGifFb(this, "http://192.168.2.129:9090/images/test1.gif", ivDefaultGifTest, (gifDraw, iv) -> {
-      Toast.makeText(Base64Test.this, "default gif 执行完成了", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Base64TestActivity.this, "default gif 执行完成了", Toast.LENGTH_SHORT).show();
     });
     //加载网络图片
     GxGlide.loadGif(this, "http://192.168.2.129:9090/images/test.gif", ivRemoteGifTest, 0, (gifDraw, iv) -> {
-      Toast.makeText(Base64Test.this, "remote local gif 执行完成了", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Base64TestActivity.this, "remote local gif 执行完成了", Toast.LENGTH_SHORT).show();
     });
     //加载本地图片
     GxGlide.loadGif(this, R.drawable.test_ui_musi, ivLocalGifTest, 0, (gifDraw, iv) -> {
-      Toast.makeText(Base64Test.this, "local gif 执行完成了", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Base64TestActivity.this, "local gif 执行完成了", Toast.LENGTH_SHORT).show();
     });
     //加载big error网络图片
     GxGlide.loadGif(this, "http://192.168.2.129:9090/images/test1.gif", ivBigErrorTest, 0, (gifDraw, iv) -> {
-      Toast.makeText(Base64Test.this, "big error gif 执行完成了", Toast.LENGTH_SHORT).show();
+      Toast.makeText(Base64TestActivity.this, "big error gif 执行完成了", Toast.LENGTH_SHORT).show();
     });
 
     String urlCir = "http://192.168.2.129:9090/images/dGVtcA.jpg";

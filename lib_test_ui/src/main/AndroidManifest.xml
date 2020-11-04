@@ -3,12 +3,27 @@
 
   <application>
     <activity
-        android:name=".Base64Test"
+        android:name=".Base64TestActivity"
         android:configChanges="keyboard|keyboardHidden|orientation"
         android:launchMode="singleTop"
         android:screenOrientation="portrait" />
     <activity
-        android:name=".ImageDelete"
+        android:name=".ImageDeleteActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".AudioTestActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".PagingTestActivity"
+        android:configChanges="keyboard|keyboardHidden|orientation"
+        android:launchMode="singleTop"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".DbTestActivity"
         android:configChanges="keyboard|keyboardHidden|orientation"
         android:launchMode="singleTop"
         android:screenOrientation="portrait" />

@@ -2,9 +2,9 @@ package com.lskj.gx.verbm.splash.app;
 
 import androidx.multidex.MultiDexApplication;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.lskj.gx.lib_basic_utils.AppContext;
 import com.lskj.gx.lib_basic_base.BuildConfig;
 import com.lskj.gx.lib_basic_base.manager.AppManager;
+import com.lskj.gx.lib_basic_utils.AppContext;
 import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;
 
 /**
@@ -29,7 +29,7 @@ public class VerbMApplication extends MultiDexApplication {
   @Override public void onCreate() {
     super.onCreate();
     //设置context
-    AppContext.init(getApplicationContext());
+    AppContext.init(this);
 
     if (BuildConfig.DEBUG) {
       ARouter.openLog();
@@ -38,11 +38,17 @@ public class VerbMApplication extends MultiDexApplication {
     //ARouter初始化
     ARouter.init(this);
 
+    //数据库迁移
+    //存在多个module
+    //RoomDbManger dbManger = Room.databaseBuilder(getApplicationContext(), RoomDbManger.class, BaseConstant.DB_NAME)
+    //    .allowMainThreadQueries()
+    //    .enableMultiInstanceInvalidation()
+    //    .build();
+
     if (BuildConfig.DEBUG) {
       //初始化db监控
       SQLiteStudioService.instance().start(this);
     }
-
     //初始化AppManager
     AppManager.getAppManager().init(this);
   }

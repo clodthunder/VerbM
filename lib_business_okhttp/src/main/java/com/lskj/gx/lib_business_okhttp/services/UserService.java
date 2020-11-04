@@ -2,7 +2,7 @@ package com.lskj.gx.lib_business_okhttp.services;
 
 import com.lskj.gx.lib_basic_base.BaseRes;
 import com.lskj.gx.lib_business_entity.dto.UserDto;
-import com.lskj.gx.lib_business_entity.vo.UserVo;
+import com.lskj.gx.lib_business_entity.vo.LoginVo;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -18,5 +18,5 @@ public interface UserService {
    * 用户登录
    * {"userName":"用户名","password":"密码"}
    */
-  @POST(value = "authz/login") Call<BaseRes<UserVo>> login(@Body UserDto user);
+  @POST(value = "authz/login") Call<BaseRes<LoginVo>> login(@Body UserDto user);
 }

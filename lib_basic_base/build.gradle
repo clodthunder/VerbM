@@ -45,6 +45,9 @@ dependencies {
     exclude group: 'com.android.support'
   }
   annotationProcessor rootProject.depsLibs.aroutercompiler
+
+  api rootProject.depsLibs.room
+  annotationProcessor rootProject.depsLibs.room_compiler
   //butterknife
   implementation rootProject.depsLibs.butterknife
   annotationProcessor rootProject.depsLibs.butterknife_compiler

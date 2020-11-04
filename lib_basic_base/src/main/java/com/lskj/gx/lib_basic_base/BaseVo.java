@@ -11,16 +11,6 @@ import android.os.Parcelable;
 public class BaseVo<T extends Parcelable> implements Parcelable {
   private T vo;
 
-  public static final Creator<BaseVo> CREATOR = new Creator<BaseVo>() {
-    @Override public BaseVo createFromParcel(Parcel in) {
-      return new BaseVo(in);
-    }
-
-    @Override public BaseVo[] newArray(int size) {
-      return new BaseVo[size];
-    }
-  };
-
   public T getVo() {
     return vo;
   }

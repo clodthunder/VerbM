@@ -67,9 +67,6 @@ public class BaseUser implements Parcelable {
     this.cert = cert;
   }
 
-  public BaseUser() {
-  }
-
   @Override public int describeContents() {
     return 0;
   }
@@ -90,7 +87,7 @@ public class BaseUser implements Parcelable {
     this.cert = in.readString();
   }
 
-  public static final Creator<BaseUser> CREATOR = new Creator<BaseUser>() {
+  public static final Parcelable.Creator<BaseUser> CREATOR = new Parcelable.Creator<BaseUser>() {
     @Override public BaseUser createFromParcel(Parcel source) {
       return new BaseUser(source);
     }
@@ -99,24 +96,4 @@ public class BaseUser implements Parcelable {
       return new BaseUser[size];
     }
   };
-
-  @Override public String toString() {
-    return "BaseUser{"
-        + "userId='"
-        + userId
-        + '\''
-        + ", userName='"
-        + userName
-        + '\''
-        + ", account='"
-        + account
-        + '\''
-        + ", pwd='"
-        + pwd
-        + '\''
-        + ", cert='"
-        + cert
-        + '\''
-        + '}';
-  }
 }

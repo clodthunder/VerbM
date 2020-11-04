@@ -37,8 +37,14 @@ import java.util.concurrent.TimeUnit;
             //ARouter.getInstance().build("/bi_okhttp/okhttp_ui_activity").navigation();
             //跳转 测试 图片加载框架 glide
             //ARouter.getInstance().build("/test_ui/base64_test").navigation();
-            ARouter.getInstance().build("/test_ui/image_delete").navigation();
-
+            //测试图片
+            //ARouter.getInstance().build("/test_ui/image_delete").navigation();
+            //测试音频
+            //ARouter.getInstance().build("/test_ui/audio_test").navigation();
+            //paging test
+            ARouter.getInstance().build("/test_ui/paging_activity").navigation();
+            //db test
+            //ARouter.getInstance().build("/test_ui/db_test_activity").navigation();
             //跳转home 页面
             //Intent mIntent = new Intent(SplashActivity.this, MainActivity.class);
             //startActivity(mIntent);

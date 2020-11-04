@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.alibaba.arouter'
 apply plugin: 'com.jakewharton.butterknife'
+
 def versionString = '1.0'
 def versionNumber = 1
 android {
@@ -43,6 +45,17 @@ dependencies {
   api rootProject.depsLibs.appcompact
   api rootProject.depsLibs.constraintlayout
   api rootProject.depsLibs.circleimageview
+  api rootProject.depsLibs.page_runtime
+  api rootProject.depsLibs.viewmodel
+  api rootProject.depsLibs.livedata
+  api rootProject.depsLibs.vm_savedstate
+  api rootProject.depsLibs.recyclerview
+  api rootProject.depsLibs.support_v4
+  api rootProject.depsLibs.smart_refresh_layout
+  api rootProject.depsLibs.room
+  api rootProject.depsLibs.room_common
+  annotationProcessor rootProject.depsLibs.room_compiler
+  annotationProcessor rootProject.depsLibs.lifecycle_java8
 
   api rootProject.depsLibs.butterknife
   annotationProcessor rootProject.depsLibs.butterknife_compiler
@@ -58,4 +71,6 @@ dependencies {
   api project(':lib_widget')
   api project(':roundimageview')
   api project(':lib_business_entity')
+  api project(':lib_business_db')
+  api project(':lib_business_okhttp')
 }

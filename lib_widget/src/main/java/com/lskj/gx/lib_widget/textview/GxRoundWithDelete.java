@@ -23,14 +23,14 @@ import com.lskj.gx.lib_widget.R;
  *
  * @Override public void onRealImgClick(GxRoundImgView realImg, ImageEntity entity) {
  * //设置
- * GxGlide.loadFitCenter(ImageDelete.this, R.drawable.temp2, gxRoundWithDelete.getRealImage());
+ * GxGlide.loadFitCenter(ImageDelete.this, R.drawable.test_ui_temp2, gxRoundWithDelete.getRealImage());
  * Toast.makeText(ImageDelete.this, entity == null ? "请设置 entity" : entity.toString(), Toast.LENGTH_SHORT).show();
  * }
  * @Override public void onDelImgClick(GxRoundImgView delImg) {
  * Toast.makeText(ImageDelete.this, "delete 触发", Toast.LENGTH_SHORT).show();
  * }
  * });
- * GxGlide.load(this, R.drawable.temp2, gxRoundWithDelete.getRealImage());
+ * GxGlide.load(this, R.drawable.test_ui_temp2, gxRoundWithDelete.getRealImage());
  */
 public class GxRoundWithDelete extends RelativeLayout {
   private Context mContext;

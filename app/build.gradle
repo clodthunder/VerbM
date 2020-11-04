@@ -28,6 +28,11 @@ android {
             getName(), AROUTER_GENERATE_DOC: "enable"]
       }
     }
+    javaCompileOptions {
+      annotationProcessorOptions {
+        includeCompileClasspath = true
+      }
+    }
   }
 
   //  vectorDrawables {
@@ -104,6 +109,14 @@ dependencies {
   implementation rootProject.depsLibs.butterknife
   annotationProcessor rootProject.depsLibs.butterknife_compiler
 
+
+  //test
+//  testImplementation rootProject.testLibs.junit
+//  androidTestImplementation rootProject.testLibs.ext_junit
+//  testImplementation rootProject.testLibs.espresso
+//  testImplementation rootProject.testLibs.test_core
+//  testImplementation rootProject.testLibs.test_rules
+
   implementation project(':lib_basic_base')
   implementation project(':lib_basic_ui')
   implementation project(':lib_business_home')
@@ -114,5 +127,5 @@ dependencies {
   implementation project(':lib_basic_okhttp')
   implementation project(':lib_test_ui')
   implementation project(':lib_basic_utils')
-  //  implementation project(':lib_basic_img')
+  implementation project(':lib_business_db')
 }

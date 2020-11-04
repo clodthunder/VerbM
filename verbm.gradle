@@ -33,8 +33,8 @@ ext {
                  annotations           : '1.2.0-alpha01',
                  arch_core             : '2.1.0',
                  rxfragment            : '1.3.0-alpha08',
-                 lifecycle_livedata    : '2.3.0-alpha07',
-                 page_runtime          : '3.0.0-alpha05',
+                 lifecycle_version     : '2.3.0-alpha07',
+                 page_runtime          : '2.1.2',
                  navigation_fragment   : '2.3.0',
                  banner                : '2.1.0',
                  easy_permission_app   : '3.0.0',
@@ -44,7 +44,9 @@ ext {
                  multidex              : '2.0.1',
                  androidsvg            : '1.4',
                  circle_image_view     : '3.1.0',
-                 utilcode              : '1.20.3',]
+                 utilcode              : '1.20.3',
+                 support_v4            : '1.0.0',
+                 smart_refresh_layout  : '1.2.0-alpha01',]
 
   //  greendao              : "org.greenrobot:greendao:${depsVersion.greendao}",
   //  eventbus              : "org.greenrobot:eventbus:${depsVersion.eventbus}",
@@ -70,9 +72,13 @@ ext {
               cardview              : "androidx.cardview:cardview:${depsVersion.cardview}",
               room                  : "androidx.room:room-runtime:${depsVersion.room}",
               room_compiler         : "androidx.room:room-compiler:${depsVersion.room}",
+              room_common           : "androidx.paging:paging-common:${depsVersion.page_runtime}",
               arch_core_runtime     : "androidx.arch.core:core-runtime:${depsVersion.arch_core}",
               rxfragment            : "androidx.fragment:fragment:${depsVersion.rxfragment}",
-              lifecycle_livedata    : "androidx.lifecycle:lifecycle-livedata:${depsVersion.lifecycle_livedata}",
+              livedata              : "androidx.lifecycle:lifecycle-livedata:${depsVersion.lifecycle_version}",
+              viewmodel             : "androidx.lifecycle:lifecycle-viewmodel:${depsVersion.lifecycle_version}",
+              vm_savedstate         : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${depsVersion.lifecycle_version}",
+              lifecycle_java8       : "androidx.lifecycle:lifecycle-common-java8:${depsVersion.lifecycle_version}",
               page_runtime          : "androidx.paging:paging-runtime:${depsVersion.page_runtime}",
               navigation_fragment   : "androidx.navigation:navigation-fragment:${depsVersion.navigation_fragment}",
               navigation_ui         : "androidx.navigation:navigation-ui:${depsVersion.navigation_fragment}",
@@ -84,10 +90,14 @@ ext {
               multidex              : "androidx.multidex:multidex:${depsVersion.multidex}",
               androidsvg            : "com.caverock:androidsvg-aar:${depsVersion.androidsvg}",
               circleimageview       : "de.hdodenhof:circleimageview:${depsVersion.circle_image_view}",
-              utilcode              : "com.blankj:utilcode:${depsVersion.utilcode}",]
+              utilcode              : "com.blankj:utilcode:${depsVersion.utilcode}",
+              support_v4            : "androidx.legacy:legacy-support-v4:${depsVersion.support_v4}",
+              smart_refresh_layout  : "androidx.swiperefreshlayout:swiperefreshlayout:${depsVersion.smart_refresh_layout}",]
 
-  testLibs = [junit            : 'junit:junit:4.12',
-              ext_junit        : 'androidx.test.ext:junit:1.1.1',
-              espresso         : 'androidx.test.espresso:espresso-core:3.2.0',
-              arch_core_testing: "androidx.arch.core:core-testing:${depsVersion.arch_core}",]
+  testLibs = [junit            : 'junit:junit:4.13',
+              ext_junit        : 'androidx.test.ext:junit:1.1.2',
+              espresso         : 'androidx.test.espresso:espresso-core:3.3.0',
+              arch_core_testing: "androidx.arch.core:core-testing:2.1.0",
+              test_core        : "androidx.test:core:1.3.0",
+              test_rules       : "androidx.test:rules:1.3.0",]
 }

@@ -8,7 +8,7 @@ import com.lskj.gx.lib_basic_base.BaseUser;
  * 创建时间:  2020/8/26
  * 编写人: tzw
  */
-public class UserEntity extends BaseUser {
+public class User extends BaseUser {
   //用户手机号
   private String phone;
   //用户邮箱  可以
@@ -51,23 +51,20 @@ public class UserEntity extends BaseUser {
     dest.writeString(this.address);
   }
 
-  public UserEntity() {
-  }
-
-  protected UserEntity(Parcel in) {
+  protected User(Parcel in) {
     super(in);
     this.phone = in.readString();
     this.email = in.readString();
     this.address = in.readString();
   }
 
-  public static final Parcelable.Creator<UserEntity> CREATOR = new Parcelable.Creator<UserEntity>() {
-    @Override public UserEntity createFromParcel(Parcel source) {
-      return new UserEntity(source);
+  public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
+    @Override public User createFromParcel(Parcel source) {
+      return new User(source);
     }
 
-    @Override public UserEntity[] newArray(int size) {
-      return new UserEntity[size];
+    @Override public User[] newArray(int size) {
+      return new User[size];
     }
   };
 

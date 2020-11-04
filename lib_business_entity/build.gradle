@@ -26,5 +26,6 @@ android {
 dependencies {
   implementation fileTree(dir: "libs", include: ["*.jar"])
   implementation rootProject.depsLibs.appcompact
+
   implementation project(':lib_basic_base')
 }

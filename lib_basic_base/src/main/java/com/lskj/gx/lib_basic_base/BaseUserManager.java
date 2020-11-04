@@ -21,12 +21,7 @@ public class BaseUserManager<T extends BaseUser> {
 
   public T getUser() {
     if (user == null) {
-      user = (T) new BaseUser();
-      user.setUserId("匿名用户");
-      user.setUserName("匿名用户");
-      user.setCert(null);
-      user.setAccount(null);
-      user.setPwd(null);
+      user = (T) new BaseUser("匿名用户id", "匿名用户name", null, null, null);
     }
     return user;
   }

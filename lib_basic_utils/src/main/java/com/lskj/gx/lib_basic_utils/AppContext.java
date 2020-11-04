@@ -1,5 +1,6 @@
 package com.lskj.gx.lib_basic_utils;
 
+import android.app.Application;
 import android.content.Context;
 
 /**
@@ -12,14 +13,20 @@ public class AppContext {
    * 业务层、基础层 获取Application实例
    */
   private static Context context;
+  private static Application application;
 
   public static Context getContext() {
     return context;
   }
 
-  public static void init(Context appContext) {
+  public static void init(Application app) {
     if (context == null) {
-      context = appContext.getApplicationContext();
+      context = app.getApplicationContext();
     }
+    application = app;
+  }
+
+  public static Application getInstance() {
+    return application;
   }
 }

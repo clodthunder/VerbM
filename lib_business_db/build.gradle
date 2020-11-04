@@ -52,13 +52,22 @@ dependencies {
   }
   annotationProcessor rootProject.depsLibs.aroutercompiler
 
+  api rootProject.depsLibs.room
+  api rootProject.depsLibs.room_common
+  annotationProcessor rootProject.depsLibs.room_compiler
+
   //butterknife
   compileOnly rootProject.depsLibs.butterknife
   annotationProcessor rootProject.depsLibs.butterknife_compiler
-  testImplementation 'junit:junit:4.12'
-  androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 
+  compileOnly project(':lib_basic_db')
+  compileOnly project(':lib_basic_base')
+  compileOnly project(':lib_basic_utils')
+
+  //test
   testImplementation rootProject.testLibs.junit
   androidTestImplementation rootProject.testLibs.ext_junit
-  compileOnly project(':lib_basic_db')
+  testImplementation rootProject.testLibs.espresso
+  testImplementation rootProject.testLibs.test_core
+  testImplementation rootProject.testLibs.test_rules
 }
