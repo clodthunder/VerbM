@@ -1,5 +1,5 @@
-//apply plugin: 'com.android.library'
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+//apply plugin: 'com.android.application'
 apply plugin: 'com.alibaba.arouter'
 apply plugin: 'com.jakewharton.butterknife'
 def versionString = '1.0'
@@ -14,7 +14,7 @@ android {
   buildToolsVersion rootProject.android.buildToolsVersion
 
   defaultConfig {
-    applicationId "com.lskj.gx.lib_hk_video"
+//    applicationId "com.lskj.gx.lib_hk_video"
     minSdkVersion rootProject.android.minSdkVersion
     targetSdkVersion rootProject.android.targetSdkVersion
     versionCode versionNumber
@@ -48,11 +48,11 @@ android {
     ignoreWarnings true
   }
 
-  android.applicationVariants.all { variant ->
-    variant.outputs.all {
-      outputFileName = "lib_Hk_${versionString}_${buildTime()}.apk"
-    }
-  }
+//  android.applicationVariants.all { variant ->
+//    variant.outputs.all {
+//      outputFileName = "lib_Hk_${versionString}_${buildTime()}.apk"
+//    }
+//  }
 
   buildTypes {
     release {

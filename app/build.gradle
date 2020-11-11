@@ -128,4 +128,5 @@ dependencies {
   implementation project(':lib_test_ui')
   implementation project(':lib_basic_utils')
   implementation project(':lib_business_db')
+  implementation 'com.lskj.gx.netlib:net-lib:1.0.2'
 }

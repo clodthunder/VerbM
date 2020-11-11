@@ -1,14 +1,14 @@
 package com.lskj.gx.lib_business_entity.vo;
 
-import android.os.Parcel;
 import com.lskj.gx.lib_basic_base.BaseVo;
+import java.io.Serializable;
 
 /**
  * 创建时间:  2020/8/31
  * 编写人: tzw
  * 功能描述:服务端返回的数据格式
  */
-public class UserVo extends BaseVo<UserVo> {
+public class UserVo extends BaseVo<UserVo> implements Serializable {
   private String userId;
   //登录名称
   private String userName;
@@ -99,46 +99,4 @@ public class UserVo extends BaseVo<UserVo> {
     this.address = address;
   }
 
-  @Override public int describeContents() {
-    return 0;
-  }
-
-  @Override public void writeToParcel(Parcel dest, int flags) {
-    super.writeToParcel(dest, flags);
-    dest.writeString(this.userId);
-    dest.writeString(this.userName);
-    dest.writeString(this.account);
-    dest.writeString(this.pwd);
-    dest.writeString(this.cert);
-    dest.writeString(this.phone);
-    dest.writeString(this.email);
-    dest.writeString(this.address);
-    dest.writeByte(this.isChecked ? (byte) 1 : (byte) 0);
-  }
-
-  public UserVo() {
-  }
-
-  protected UserVo(Parcel in) {
-    super(in);
-    this.userId = in.readString();
-    this.userName = in.readString();
-    this.account = in.readString();
-    this.pwd = in.readString();
-    this.cert = in.readString();
-    this.phone = in.readString();
-    this.email = in.readString();
-    this.address = in.readString();
-    this.isChecked = in.readByte() != 0;
-  }
-
-  public static final Creator<UserVo> CREATOR = new Creator<UserVo>() {
-    @Override public UserVo createFromParcel(Parcel source) {
-      return new UserVo(source);
-    }
-
-    @Override public UserVo[] newArray(int size) {
-      return new UserVo[size];
-    }
-  };
 }

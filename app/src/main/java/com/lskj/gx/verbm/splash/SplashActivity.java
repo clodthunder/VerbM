@@ -42,12 +42,14 @@ import java.util.concurrent.TimeUnit;
             //测试音频
             //ARouter.getInstance().build("/test_ui/audio_test").navigation();
             //paging test
-            ARouter.getInstance().build("/test_ui/paging_activity").navigation();
+            //ARouter.getInstance().build("/test_ui/paging_activity").navigation();
             //db test
             //ARouter.getInstance().build("/test_ui/db_test_activity").navigation();
             //跳转home 页面
             //Intent mIntent = new Intent(SplashActivity.this, MainActivity.class);
             //startActivity(mIntent);
+            //测试 跳转 观察者模式
+            ARouter.getInstance().build("/test_ui/observers_test").navigation();
             SplashActivity.this.finish();
           }
         });

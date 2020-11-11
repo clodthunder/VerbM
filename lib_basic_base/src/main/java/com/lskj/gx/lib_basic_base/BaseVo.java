@@ -1,14 +1,13 @@
 package com.lskj.gx.lib_basic_base;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.io.Serializable;
 
 /**
  * 创建时间:  2020/8/31
  * 编写人: tzw
  * 功能描述: 主要接受后台返回来的数据
  */
-public class BaseVo<T extends Parcelable> implements Parcelable {
+public class BaseVo<T extends Serializable> implements Serializable {
   private T vo;
 
   public T getVo() {
@@ -17,25 +16,5 @@ public class BaseVo<T extends Parcelable> implements Parcelable {
 
   public void setVo(T vo) {
     this.vo = vo;
-  }
-
-  @Override public int describeContents() {
-    return 0;
-  }
-
-  @Override public void writeToParcel(Parcel dest, int flags) {
-    dest.writeParcelable(this.vo, flags);
-  }
-
-  public BaseVo() {
-  }
-
-  protected BaseVo(Parcel in) {
-    String voName = in.readString();
-    try {
-      this.vo = in.readParcelable(Class.forName(voName).getClassLoader());
-    } catch (ClassNotFoundException e) {
-      e.printStackTrace();
-    }
   }
 }
